@@ -46,9 +46,7 @@ tasks {
 
     jar {
         from("LICENSE") {
-            rename {
-                "${it}_${ModProperties.archivesBaseName}"
-            }
+            rename { "${it}_${ModProperties.archivesBaseName}" }
         }
     }
 

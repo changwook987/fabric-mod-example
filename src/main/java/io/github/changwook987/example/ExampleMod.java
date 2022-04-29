@@ -1,5 +1,6 @@
 package io.github.changwook987.example;
 
+import io.github.changwook987.example.actions.Actions;
 import io.github.changwook987.example.blocks.ExampleBlock;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -14,6 +15,8 @@ import net.minecraft.util.registry.Registry;
 public class ExampleMod implements ModInitializer {
     @Override
     public void onInitialize() {
+        Actions.init();
+
         Registry.register(Registry.BLOCK, new Identifier("tutorial", "example_block"), EXAMPLE_BLOCK);
         Registry.register(
                 Registry.ITEM,
@@ -22,5 +25,5 @@ public class ExampleMod implements ModInitializer {
         );
     }
 
-    public static Block EXAMPLE_BLOCK = new ExampleBlock(FabricBlockSettings.of(Material.METAL).strength(4f));
+    public static Block EXAMPLE_BLOCK = new ExampleBlock(FabricBlockSettings.of(Material.METAL).strength(0.1f));
 }
